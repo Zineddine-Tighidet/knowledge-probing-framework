@@ -61,7 +61,7 @@ pip install .
 
 Then, to use the framework for knowledge probing, you can run the following command:
 ```sh
-python scripts/main.py --model_name $MODEL_NAME --device $DEVICE --nb_counter_parametric_knowledge $NB_COUNTER_PARAMETRIC_KNOWLEDGE $MODULE_TO_INCLUDE $TOKEN_TO_INCLUDE "--vertical"
+python scripts/main.py --model_name $MODEL_NAME --device $DEVICE --nb_counter_parametric_knowledge $NB_COUNTER_PARAMETRIC_KNOWLEDGE $MODULE_TO_INCLUDE --token_position $TOKEN_TO_INCLUDE
 ```
 
 ### Arguments
@@ -78,7 +78,6 @@ python scripts/main.py --model_name $MODEL_NAME --device $DEVICE --nb_counter_pa
     * `--include_object_context_token`: include the object context token (e.g. *Brazil is located in <u>Europe</u>. Brazil is located in*)
     * `--include_subject_query_token`: include the subject query token (e.g. *Brazil is located in Europe. <u>Brazil</u> is located in*)
     * `--include_first_token`: include the first token (used for the control experiment -- e.g. *<u>Brazil</u> is located in Europe. Brazil is located in*)
-- `--vertical`: probe the LLM token-wise.
 
 ## 3. Reproduce the figures in the paper:
 
