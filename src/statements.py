@@ -68,7 +68,7 @@ def adjust_statement_subject_form(
     statement: str, statement_subject: str, statement_relation: str, statement_object: str
 ) -> str:
     """this function corrects the statement' subject form that is
-    returned by the LLM in LLMaaS (e.g. Mistral-large) by making
+    returned by Mistral-large by making
     sure that it matches the statement either by adding "The" in
     the beginning or "'s" "," in the end
 
