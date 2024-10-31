@@ -12,7 +12,7 @@ all_prompting_results = []
 
 for model_name in MODEL_NAMES:
     prompting_results = pd.read_pickle(
-        f"{PERMANENT_PATH}/prompting_results/{model_name}_prompting_results_without_activations.pkl"
+        f"{PERMANENT_PATH}/paper_data/prompting_results/{model_name}_prompting_results_without_activations.pkl"
     )
     prompting_results["model_name"] = model_name
     all_prompting_results.append(prompting_results)
@@ -48,6 +48,6 @@ ax.legend(fontsize=22, title="Knowledge Source", title_fontsize='22')  # Adjust 
 plt.tight_layout()
 
 # Save the figure as a PDF file
-plt.savefig(f"{PERMANENT_PATH}/paper_figures_v2/relation_knowledge_source.pdf")
+plt.savefig(f"{PERMANENT_PATH}/paper_figures/relation_knowledge_source.pdf")
 
 plt.show()

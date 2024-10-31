@@ -5,4 +5,4 @@ MODEL_NAMES = {
     "EleutherAI_pythia-1.4b": "Pythia-1.4B",
 }
 
-PERMANENT_PATH = "./paper_data"
+PERMANENT_PATH = "."

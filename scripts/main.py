@@ -15,7 +15,6 @@ from src.classification.classifier import perform_classification_by_relation_gro
 
 if __name__ == "__main__":
     # define constants
-    PARAREL_PATH = "pararel_with_relation_groups.csv"
     PERMANENT_PATH = "." # change with your path
     MAX_GEN_TOKENS = 10
     SPLIT_REGEXP = r'"|\.|\n|\\n|,|\('
@@ -31,7 +30,7 @@ if __name__ == "__main__":
     include_mlps = args.include_mlps
     include_mhsa = args.include_mhsa
     include_mlps_l1 = args.include_mlps_l1
-    vertical = args.vertical
+    vertical = True
     test_on_head = args.test_on_head
     token_position = args.token_position
     n_head = args.n_head
@@ -126,7 +125,7 @@ if __name__ == "__main__":
     )
 
     # save the prompting results (used to reproduce the knowledge source counting figures)
-    prompting_results[["knowledge_source"]].to_pickle(f"{PERMANENT_PATH}/{model_name}_prompting_results_without_activations.pkl")
+    prompting_results[["knowledge_source", "rel_lemma", "statement_subject"]].to_pickle(f"{PERMANENT_PATH}/paper_data/prompting_results/{model_name}_prompting_results_without_activations.pkl")
 
     # we don't consider ND labels in our classifier
     prompting_results = prompting_results[prompting_results.knowledge_source != "ND"]

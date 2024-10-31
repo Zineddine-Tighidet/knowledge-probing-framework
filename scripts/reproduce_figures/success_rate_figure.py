@@ -96,6 +96,6 @@ for model_idx, model_name in enumerate(MODEL_NAMES):
 
     plt.tight_layout()
 
-    plt.savefig(f"{PERMANENT_PATH}/paper_figures_v2/all_models_avg_success_rate.pdf", bbox_inches="tight")
+    plt.savefig(f"{PERMANENT_PATH}/paper_figures/all_models_avg_success_rate.pdf", bbox_inches="tight")
 
     plt.show()

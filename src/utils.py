@@ -51,7 +51,6 @@ def parse_args():
     parser.add_argument("--include_mlps", action="store_true", help="Whether to include MLPs.")
     parser.add_argument("--include_mhsa", action="store_true", help="Whether to include MHSAs.")
     parser.add_argument("--include_mlps_l1", action="store_true", help="Whether to include MLP first layer.")
-    parser.add_argument("--vertical", action="store_true", help="Whether to get the activations vertically.")
     parser.add_argument(
         "--test_on_head",
         action="store_true",

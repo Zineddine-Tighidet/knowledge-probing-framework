@@ -12,16 +12,16 @@ all_prompting_results = []
 
 for model_name in MODEL_NAMES:
     prompting_results = pd.read_pickle(
-        f"{PERMANENT_PATH}/prompting_results/{model_name}_prompting_results_without_activations.pkl"
+        f"{PERMANENT_PATH}/paper_data/prompting_results/{model_name}_prompting_results_without_activations.pkl"
     )
     prompting_results["model_name"] = MODEL_NAMES[model_name]
     all_prompting_results.append(prompting_results)
 
 raw_pararel_dataset_with_statements = pd.read_csv(
-    f"{PERMANENT_PATH}/raw_pararel_with_correctly_reformatted_statements.csv"
+    f"{PERMANENT_PATH}/paper_data/raw_pararel_with_correctly_reformatted_statements.csv"
 )
 all_prompting_results = pd.concat(all_prompting_results)
-entity_counts = pd.read_pickle(f"{PERMANENT_PATH}/paper_data_v2/entity_counts.pkl")
+entity_counts = pd.read_pickle(f"{PERMANENT_PATH}/paper_data/entity_counts.pkl")
 
 # get the subject column to count the frequencies in The Pile corpus
 all_prompting_results = all_prompting_results.merge(
@@ -72,6 +72,6 @@ plt.gca().spines["top"].set_visible(False)
 plt.gca().spines["right"].set_visible(False)
 plt.tight_layout()
 
-plt.savefig(f"{PERMANENT_PATH}/paper_figures_v2/subject_count_in_thepile_by_knowledge_source.pdf", bbox_inches="tight")
+plt.savefig(f"{PERMANENT_PATH}/paper_figures/subject_count_in_thepile_by_knowledge_source.pdf", bbox_inches="tight")
 
 plt.show()
