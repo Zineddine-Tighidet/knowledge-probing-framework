@@ -74,10 +74,10 @@ python scripts/main.py --model_name $MODEL_NAME --device $DEVICE --nb_counter_pa
     * --include_mlps_l1: include the first layer of the MLP (MLP-L1)
     * --include_mhsa: include the output of the Multi Head Self Attention (MHSA)
 - `$TOKEN_TO_INCLUDE`: this argument specifies which token to consider, it can take the following values:
-    * `--include_relation_query_token`: include the relation query token (e.g. *Brazil is located in Europe. Brazil <u>is located in</u>*)
-    * `--include_object_context_token`: include the object context token (e.g. *Brazil is located in <u>Europe</u>. Brazil is located in*)
-    * `--include_subject_query_token`: include the subject query token (e.g. *Brazil is located in Europe. <u>Brazil</u> is located in*)
-    * `--include_first_token`: include the first token (used for the control experiment -- e.g. *<u>Brazil</u> is located in Europe. Brazil is located in*)
+    * `--include_relation_query_token`: include the relation query token (e.g. *Brazil is located in Europe. Brazil <ins>is located in</ins>*)
+    * `--include_object_context_token`: include the object context token (e.g. *Brazil is located in <ins>Europe</ins>. Brazil is located in*)
+    * `--include_subject_query_token`: include the subject query token (e.g. *Brazil is located in Europe. <ins>Brazil</ins> is located in*)
+    * `--include_first_token`: include the first token (used for the control experiment -- e.g. *<ins>Brazil</ins> is located in Europe. Brazil is located in*)
 
 ## 3. Reproduce the figures in the paper:
 
