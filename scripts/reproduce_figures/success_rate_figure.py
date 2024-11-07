@@ -90,12 +90,12 @@ for model_idx, model_name in enumerate(MODEL_NAMES):
         if token_plot_position_in_plot == 0:
             ax.set_ylabel("Success Rate", fontsize=30)
 
-    # Configure legend
-    fig.legend(handles, labels, loc="upper center", bbox_to_anchor=(0.5, 1.1), ncol=3, fontsize=31, frameon=False)
-    sns.despine()
+# Configure legend
+fig.legend(handles, labels, loc="upper center", bbox_to_anchor=(0.5, 1.1), ncol=3, fontsize=31, frameon=False)
+sns.despine()
 
-    plt.tight_layout()
+plt.tight_layout()
 
-    plt.savefig(f"{PERMANENT_PATH}/paper_figures/all_models_avg_success_rate.pdf", bbox_inches="tight")
+plt.savefig(f"{PERMANENT_PATH}/paper_figures/all_models_avg_success_rate.pdf", bbox_inches="tight")
 
-    plt.show()
+plt.show()
