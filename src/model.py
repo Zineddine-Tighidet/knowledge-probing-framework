@@ -29,5 +29,5 @@ def load_model_and_tokenizer(
     path = model_paths[model_name]
 
     model = AutoModelForCausalLM.from_pretrained(path, device_map=device, trust_remote_code=True, token=HUGGINGFACE_TOKEN)
-    tokenizer = AutoTokenizer.from_pretrained(path, device_map=device, trust_remote_code=True, token=HUGGINGFACE_TOKEN")
+    tokenizer = AutoTokenizer.from_pretrained(path, device_map=device, trust_remote_code=True, token=HUGGINGFACE_TOKEN)
     return model, tokenizer
