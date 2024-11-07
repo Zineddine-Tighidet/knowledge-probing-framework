@@ -84,9 +84,14 @@ Where:
     * `subject_query`: include the subject query token (e.g. *Brazil is located in Europe. <ins>Brazil</ins> is located in*)
     * `first`: include the first token (used for the control experiment -- e.g. *<ins>Brazil</ins> is located in Europe. Brazil is located in*)
 
-The results can be found in `paper_data/prompting_results` and `classification_metrics`.
+You can also reproduce the subjects frequency in The Pile by running the command below:
+```sh
+python scripts/entity_count_in_The_Pile.py
+```
+\
+All the results from the previous commands can be found in the `paper_data` and `classification_metrics` folders.
 
-We provide the paper results in this repository if you don't want to run all the previous commands. This also allows to reproduce the paper figures using the commands described below.
+Note: We provide the paper results in this repository if you don't want to run all the previous commands. This also allows to reproduce the paper figures using the commands described below.
 
 ## 3. Reproduce the figures in the paper:
 
