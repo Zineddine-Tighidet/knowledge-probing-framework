@@ -59,25 +59,34 @@ pip install .
 
 ## 2. Run the experiments to probe LLMs, and save the resulting classification metrics:
 
-Then, to use the framework for knowledge probing, you can run the following command:
+To reproduce all the probing results in the paper, you can run the following command:
+```sh
+./scripts/run_all.sh
+```
+
+To reproduce the probing results on a specific LLM, module, and token, you can run the following command:
 ```sh
 python scripts/main.py --model_name $MODEL_NAME --device $DEVICE --nb_counter_parametric_knowledge $NB_COUNTER_PARAMETRIC_KNOWLEDGE $MODULE_TO_INCLUDE --token_position $TOKEN_TO_INCLUDE
 ```
 
-### Arguments
+Where:
 
 - `$MODEL_NAME`: Model name to build the knowledge datasets. Options are `EleutherAI_pythia-1.4b`, `Phi-1_5`, `Mistral-7B-v0.1`, `Meta-Llama-3-8B`.
 - `$DEVICE`: the device on which to load the LLMs (`cuda`, `cpu`, or `mps`)
 - `$NB_COUNTER_PARAMETRIC_KNOWLEDGE`: Number of counter-parametric-knowledge triplets per triplet knowledge
 - `$MODULE_TO_INCLUDE`: this argument specifies which module to consider (MLP-L1, MLP-L2, or MHSA), it can take the following values:
-    * --include_mlps: include the output or the second layer of the MLP (MLP-L2)
-    * --include_mlps_l1: include the first layer of the MLP (MLP-L1)
-    * --include_mhsa: include the output of the Multi Head Self Attention (MHSA)
+    * `--include_mlps`: include the output or the second layer of the MLP (MLP-L2)
+    * `--include_mlps_l1`: include the first layer of the MLP (MLP-L1)
+    * `--include_mhsa`: include the output of the Multi Head Self Attention (MHSA)
 - `$TOKEN_TO_INCLUDE`: this argument specifies which token to consider, it can take the following values:
-    * `--include_relation_query_token`: include the relation query token (e.g. *Brazil is located in Europe. Brazil <ins>is located in</ins>*)
-    * `--include_object_context_token`: include the object context token (e.g. *Brazil is located in <ins>Europe</ins>. Brazil is located in*)
-    * `--include_subject_query_token`: include the subject query token (e.g. *Brazil is located in Europe. <ins>Brazil</ins> is located in*)
-    * `--include_first_token`: include the first token (used for the control experiment -- e.g. *<ins>Brazil</ins> is located in Europe. Brazil is located in*)
+    * `relation_query`: include the relation query token (e.g. *Brazil is located in Europe. Brazil <ins>is located in</ins>*)
+    * `object`: include the object context token (e.g. *Brazil is located in <ins>Europe</ins>. Brazil is located in*)
+    * `subject_query`: include the subject query token (e.g. *Brazil is located in Europe. <ins>Brazil</ins> is located in*)
+    * `first`: include the first token (used for the control experiment -- e.g. *<ins>Brazil</ins> is located in Europe. Brazil is located in*)
+
+The results can be found in `paper_data/prompting_results` and `classification_metrics`.
+
+We provide the paper results in this repository if you don't want to run all the previous commands. This also allows to reproduce the paper figures using the commands described below.
 
 ## 3. Reproduce the figures in the paper:
 
